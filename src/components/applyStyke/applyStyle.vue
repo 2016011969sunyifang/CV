@@ -1,5 +1,22 @@
 <template>
   <div>
+    <el-backtop :bottom="100">
+      <div
+        style="
+           {
+            height: 100%;
+            width: 100%;
+            background-color: #f2f5f6;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            line-height: 40px;
+            color: #1989fa;
+          }
+        "
+      >
+        ⏫
+      </div>
+    </el-backtop>
     <div :class="sticky ? 'sticky' : ''" id="topNavBar" class="topNavBar">
       <div class="topNavBar-inner clearfix">
         <a class="logo" href="#" alt="logo" style="float: left">
@@ -15,7 +32,7 @@
               <a href="#siteSkills">技能</a>
             </li>
             <li>
-              <a href="#siteWorks">作品</a>
+              <a href="#siteWorks1">作品</a>
               <ul class="submenu">
                 <li>作品1</li>
                 <li>作品2</li>
@@ -118,59 +135,95 @@
         <li>
           <h3>JavaScript</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 20%"></div>
+            <div class="progress" :style="{ width: width2 }"></div>
           </div>
         </li>
         <li>
           <h3>jQuery</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 30%"></div>
+            <div class="progress" :style="{ width: width3 }"></div>
           </div>
         </li>
         <li>
           <h3>Vue.js</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 40%"></div>
+            <div class="progress" :style="{ width: width4 }"></div>
           </div>
         </li>
         <li>
           <h3>React.js</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 50%"></div>
+            <div class="progress" :style="{ width: width5 }"></div>
           </div>
         </li>
         <li>
           <h3>Node.js</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 60%"></div>
+            <div class="progress" :style="{ width: width6 }"></div>
           </div>
         </li>
         <li>
           <h3>express</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 60%"></div>
+            <div class="progress" :style="{ width: width7 }"></div>
           </div>
         </li>
         <li>
           <h3>mongoDB</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 60%"></div>
+            <div class="progress" :style="{ width: width8 }"></div>
           </div>
         </li>
         <li>
           <h3>java</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 60%"></div>
+            <div class="progress" :style="{ width: width9 }"></div>
           </div>
         </li>
         <li>
           <h3>python</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 60%"></div>
+            <div class="progress" :style="{ width: width10 }"></div>
           </div>
         </li>
       </ol>
     </section>
+    <div class="add" id="siteWorks1">
+      <h2>作品集</h2>
+      <swiper class="swiper" :options="swiperOption">
+        <swiper-slide class="swp"
+          ><img
+            src="https://ftp.bmp.ovh/imgs/2020/11/8af5cf9a2d77f24b.jpg"
+            alt=""
+        /></swiper-slide>
+        <swiper-slide
+          ><img
+            src="https://ftp.bmp.ovh/imgs/2020/11/8a4cc379aa2946d3.jpg"
+            alt=""
+        /></swiper-slide>
+        <swiper-slide
+          ><img
+            src="https://ftp.bmp.ovh/imgs/2020/11/6caf0551ed54959a.jpg"
+            alt=""
+        /></swiper-slide>
+        <swiper-slide
+          ><img
+            src="https://ftp.bmp.ovh/imgs/2020/11/3980c091a6a013ab.jpg"
+            alt=""
+        /></swiper-slide>
+        <swiper-slide
+          ><img
+            src="https://ftp.bmp.ovh/imgs/2020/11/7cf9ef0940af8cc1.jpg"
+            alt=""
+        /></swiper-slide>
+        <swiper-slide
+          ><img
+            src="https://ftp.bmp.ovh/imgs/2020/11/01abe6226b6c1574.jpg"
+            alt=""
+        /></swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
+    </div>
     <section class="portfolio" id="siteWorks">
       <h2>作品集</h2>
       <nav>
@@ -217,11 +270,14 @@
       <h1>继续写....</h1>
       <h1>继续写未完待续</h1>
     </div>
+
     <div v-html="resStyleCode"></div>
   </div>
 </template>
 
 <script>
+import { swiper, swiperSlide } from "vue-awesome-swiper";
+import "swiper/dist/css/swiper.css";
 export default {
   //组件名字
   name: "comfilmlisttopnav",
@@ -239,7 +295,10 @@ export default {
     },
   },
   //组件注册
-  components: {},
+  components: {
+    swiper,
+    swiperSlide,
+  },
   // vue数据集中管理
   data() {
     return {
@@ -250,9 +309,39 @@ export default {
       bar3: false,
       sticky: false,
       width1: 10 + "%",
+      width2: 10 + "%",
+      width3: 10 + "%",
+      width4: 10 + "%",
+      width5: 10 + "%",
+      width6: 10 + "%",
+      width7: 10 + "%",
+      width8: 10 + "%",
+      width9: 10 + "%",
+      width10: 10 + "%",
       touxiang:
         "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3839069834,893282384&fm=26&gp=0.jpg",
       resStyleCode: "",
+      swiperOption: {
+        autoplay: true,
+        loop: true,
+        speed: 500,
+        //各种样式可以尝试一下
+        effect: "cube",
+        cubeEffect: {
+          shadowOffset: 100,
+          shadowScale: 0.6,
+        },
+        //分页器
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        //上一张下一张
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
     };
   },
   //方法 函数写这里
@@ -278,6 +367,11 @@ export default {
     responseStyleCode: function (code) {
       this.resStyleCode = "<style>" + code + "</style>";
     },
+    showHobby(name, cd) {
+      setTimeout((name, cd) => {
+        this.name = cd + "%";
+      }, 1000);
+    },
   },
   //计算属性
   computed: {},
@@ -302,12 +396,64 @@ export default {
       "scroll",
       (e) => {
         let top = document.documentElement.scrollTop;
-        if (top > 300) {
-          this.width1 = 90 + "%";
-          // console.log(this.$refs)
-          // this.$refs.html1.style.width = 200 +'px'
-          // this.$refs.html1.style.width = 95 +'%'
+        if (top > 490 && top < 1371) {
+          this.width1 = Math.random() * 100 + "%";
+          this.width2 = Math.random() * 100 + "%";
+          this.width3 = Math.random() * 100 + "%";
+          this.width4 = Math.random() * 100 + "%";
+          this.width5 = Math.random() * 100 + "%";
+          this.width6 = Math.random() * 100 + "%";
+          this.width7 = Math.random() * 100 + "%";
+          this.width8 = Math.random() * 100 + "%";
+          this.width9 = Math.random() * 100 + "%";
+          this.width10 = Math.random() * 100 + "%";
+          // let that = this;
+          // this.showHobby(that.width10, 90);
+          setTimeout(() => {
+            this.width1 = 90 + "%";
+          }, 100);
+          setTimeout(() => {
+            this.width2 = 90 + "%";
+          }, 200);
+          setTimeout(() => {
+            this.width3 = 90 + "%";
+          }, 300);
+          setTimeout(() => {
+            this.width4 = 90 + "%";
+          }, 400);
+          setTimeout(() => {
+            this.width5 = 90 + "%";
+          }, 500);
+          setTimeout(() => {
+            this.width6 = 90 + "%";
+          }, 600);
+          setTimeout(() => {
+            this.width7 = 90 + "%";
+          }, 700);
+          setTimeout(() => {
+            this.width8 = 90 + "%";
+          }, 800);
+          setTimeout(() => {
+            this.width9 = 90 + "%";
+          }, 900);
+          setTimeout(() => {
+            this.width10 = 90 + "%";
+          }, 900);
         }
+        // else {
+        //   if (this.width1 == "0%") return;
+        //   this.width1 = 0 + "%";
+        //   this.width2 = 0 + "%";
+        //   this.width3 = 0 + "%";
+        //   this.width4 = 0 + "%";
+        //   this.width5 = 0 + "%";
+        //   this.width6 = 0 + "%";
+        //   this.width7 = 0 + "%";
+        //   this.width8 = 0 + "%";
+        //   this.width9 = 0 + "%";
+        //   this.width10 = 0 + "%";
+        //   console.log(123);
+        // }
         if (top > 200) {
           this.sticky = true;
         } else {
@@ -366,5 +512,13 @@ export default {
 }
 .userCard > footer.media > a:hover {
   background: #cf5d5f;
+}
+.swiper {
+  width: 100%;
+  height: 600px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

@@ -10,6 +10,12 @@ const routes = [
     name: 'jianli',
     component: jianli
   },
+  {
+    path: '/home',
+    name: 'home',
+    component: Home
+  },
+
 
 ]
 

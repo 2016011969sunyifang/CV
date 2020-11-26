@@ -1,7 +1,7 @@
 <template>
   <div :class="{ disp: flag }" id="show-style">
     <svg @click="closeWindow" aria-hidden="true" class="icons">
-      <use xlink:href="#icon-guanbi"></use>
+      <use xlink:href="#icon-tubiaolunkuo-"></use>
     </svg>
     <div class="style-content" id="style_content">
       <pre class="style-code" v-html="styleMsg"></pre>

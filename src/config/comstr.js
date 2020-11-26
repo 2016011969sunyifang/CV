@@ -1,5 +1,5 @@
 export const str = {
-    code: `
+  code: `
     .topNavBar {
         padding: 20px 0;
         position: fixed;
@@ -8,6 +8,7 @@ export const str = {
         width: 100%;
         transition: all 0.5s;
         color: #b7b7b7;
+        z-index: 999999 !important;
       }
       .topNavBar.sticky {
         background: white;
@@ -225,6 +226,16 @@ export const str = {
         line-height: 1.8;
         font-size: 18px;
       }
+      .add h2 {
+        margin-top: 65px;
+        margin-bottom: 32px;
+        text-align: center;
+        color: #3d4451;
+        font-size: 34px;
+        line-height: 1.2;
+        font-weight: 600;
+      }
+
       
       section.skills,
       section.portfolio {
@@ -350,5 +361,9 @@ export const str = {
           text-align: center;
         }
       }
+     
+      // 渲染完毕感谢观看
+      
+      // 点击右上角即可关闭~
     `
 }
