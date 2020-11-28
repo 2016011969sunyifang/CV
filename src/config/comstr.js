@@ -8,7 +8,7 @@ export const str = {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 515px;
+    height: 700px;
     overflow: hidden;
     list-style-type: none;
   }
@@ -47,7 +47,7 @@ export const str = {
         rgba(16, 16, 16, 0.8),
         rgba(16, 16, 16, 0.8)
       ),
-      url("https://ftp.bmp.ovh/imgs/2020/11/8af5cf9a2d77f24b.jpg");
+      url("https://ftp.bmp.ovh/imgs/2020/11/a4df9b7b03754a0a.jpg");
   }
   
   #slide2 {
@@ -63,7 +63,7 @@ export const str = {
         rgba(16, 16, 16, 0.8),
         rgba(16, 16, 16, 0.8)
       ),
-      url("https://ftp.bmp.ovh/imgs/2020/11/6caf0551ed54959a.jpg");
+      url("https://ftp.bmp.ovh/imgs/2020/11/7ef758f6adfa294b.jpg");
   }
   
   #slide4 {
@@ -71,7 +71,7 @@ export const str = {
         rgba(16, 16, 16, 0.8),
         rgba(16, 16, 16, 0.8)
       ),
-      url("https://ftp.bmp.ovh/imgs/2020/11/3980c091a6a013ab.jpg");
+      url("https://ftp.bmp.ovh/imgs/2020/11/f49d8982c1ae749c.jpg");
   }
   
   @keyframes kenburns {
@@ -264,6 +264,7 @@ export const str = {
       }
       
       .userCard > footer.media {
+        height:55px;
         background: #e6686a;
         text-align: center;
       }
@@ -285,7 +286,7 @@ export const str = {
         vertical-align: top;
       }
       main {
-        margin-top: -340px;
+        margin-top: -150px;
       }
       main .downloadResume-wrapper {
         text-align: center;
@@ -308,13 +309,14 @@ export const str = {
       }
       
       .selfIntroduction {
+        margin-top:40px;
         max-width: 940px;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
         font-family: kai;
-        line-height: 1.8;
-        font-size: 18px;
+        line-height: 2.8;
+        font-size: 22px;
       }
       .add {
         width:1180px;
