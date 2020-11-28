@@ -1,5 +1,95 @@
 export const str = {
   code: `
+  .ken-burns-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 515px;
+    overflow: hidden;
+    list-style-type: none;
+  }
+  
+  .ken-burns-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.2);
+    animation: kenburns 24s linear infinite;
+  }
+  
+  .ken-burns-slideshow .slide:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .ken-burns-slideshow .slide:nth-child(2) {
+    animation-delay: 6s;
+  }
+  
+  .ken-burns-slideshow .slide:nth-child(3) {
+    animation-delay: 12s;
+  }
+  
+  .ken-burns-slideshow .slide:nth-child(4) {
+    animation-delay: 18s;
+  }
+  
+  #slide1 {
+    background-image: linear-gradient(
+        rgba(16, 16, 16, 0.8),
+        rgba(16, 16, 16, 0.8)
+      ),
+      url("https://ftp.bmp.ovh/imgs/2020/11/8af5cf9a2d77f24b.jpg");
+  }
+  
+  #slide2 {
+    background-image: linear-gradient(
+        rgba(16, 16, 16, 0.8),
+        rgba(16, 16, 16, 0.8)
+      ),
+      url("https://ftp.bmp.ovh/imgs/2020/11/8a4cc379aa2946d3.jpg");
+  }
+  
+  #slide3 {
+    background-image: linear-gradient(
+        rgba(16, 16, 16, 0.8),
+        rgba(16, 16, 16, 0.8)
+      ),
+      url("https://ftp.bmp.ovh/imgs/2020/11/6caf0551ed54959a.jpg");
+  }
+  
+  #slide4 {
+    background-image: linear-gradient(
+        rgba(16, 16, 16, 0.8),
+        rgba(16, 16, 16, 0.8)
+      ),
+      url("https://ftp.bmp.ovh/imgs/2020/11/3980c091a6a013ab.jpg");
+  }
+  
+  @keyframes kenburns {
+    10% {
+      opacity: 1;
+    }
+  
+    25% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+    40% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+  
     .topNavBar {
         padding: 20px 0;
         position: fixed;
@@ -205,7 +295,7 @@ export const str = {
         line-height: 16px;
         padding: 21px 55px;
         border: 1px solid #e6686a;
-        background: #e6686a;
+        // background: #e6686a;
         display: inline-block;
         border-radius: 2px;
         color: #3d4451;
@@ -225,6 +315,10 @@ export const str = {
         font-family: kai;
         line-height: 1.8;
         font-size: 18px;
+      }
+      .add {
+        width:1180px;
+        margin: 0px auto;
       }
       .add h2 {
         margin-top: 65px;
@@ -341,6 +435,7 @@ export const str = {
         width: 96px;
       }
       section.portfolio .works {
+      
         position: relative;
       }
       section.portfolio .works > .big,

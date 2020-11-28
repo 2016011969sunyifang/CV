@@ -1,90 +1,41 @@
 <template>
-  <div class="example-3d">
-    <swiper class="swiper" :options="swiperOption">
-      <swiper-slide class="swp"
-        ><img
-          src="https://ftp.bmp.ovh/imgs/2020/11/8af5cf9a2d77f24b.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          src="https://ftp.bmp.ovh/imgs/2020/11/8a4cc379aa2946d3.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          src="https://ftp.bmp.ovh/imgs/2020/11/6caf0551ed54959a.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          src="https://ftp.bmp.ovh/imgs/2020/11/3980c091a6a013ab.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          src="https://ftp.bmp.ovh/imgs/2020/11/7cf9ef0940af8cc1.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          src="https://ftp.bmp.ovh/imgs/2020/11/01abe6226b6c1574.jpg"
-          alt=""
-      /></swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
+  <div id="root">
+    <!-- 被transition标签包裹的元素会有动画效果(自动会添加css样式以及删除)，transition标签没有name属性则默认为样式名以v开头，若有如name是tran的则样式为tran-enter，tran-enter-active -->
+    <transition>
+      <div v-if="show">hello world</div>
+    </transition>
+    <button @click="handleClick">切换</button>
   </div>
 </template>
+
 <script>
-import { swiper, swiperSlide } from "vue-awesome-swiper";
-import "swiper/dist/css/swiper.css";
 export default {
-  name: "swiper-example-3d-cube",
-  title: "3D Cube effect",
-  components: {
-    swiper,
-    swiperSlide,
-  },
   data() {
     return {
-      swiperOption: {
-        autoplay: true,
-        loop: true,
-        speed: 500,
-        //各种样式可以尝试一下
-        effect: "cube",
-        cubeEffect: {
-          shadowOffset: 100,
-          shadowScale: 0.6,
-        },
-        //分页器
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        //上一张下一张
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      },
+      show: false,
     };
+  },
+  methods: {
+    handleClick: function () {
+      this.show = !this.show;
+    },
   },
 };
 </script>
-<style  lang="scss" scoped>
-.swiper {
-  width: 400px;
-  height: 400px;
-  img {
-    width: 100%;
-  }
+
+<style scoped>
+/* 显示动画效果 */
+.v-enter {
+  opacity: 0;
 }
-.swp {
-  width: 400px;
-  height: 400px;
-  img {
-    width: 100%;
-  }
+.v-enter-active {
+  transition: opacity 3s;
+}
+/* 隐藏动画效果 */
+.v-leave-to {
+  opacity: 0;
+}
+.v-leave-active {
+  transition: opacity 3s;
 }
 </style>
