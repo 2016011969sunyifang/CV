@@ -44,32 +44,32 @@ export const str = {
   
   #slide1 {
     background-image: linear-gradient(
-        rgba(16, 16, 16, 0.8),
-        rgba(16, 16, 16, 0.8)
+        rgba(16, 16, 16, 0.1),
+        rgba(16, 16, 16, 0.1)
       ),
       url("https://ftp.bmp.ovh/imgs/2020/11/a4df9b7b03754a0a.jpg");
   }
   
   #slide2 {
     background-image: linear-gradient(
-        rgba(16, 16, 16, 0.8),
-        rgba(16, 16, 16, 0.8)
+        rgba(16, 16, 16, 0.1),
+        rgba(16, 16, 16, 0.1)
       ),
       url("https://ftp.bmp.ovh/imgs/2020/11/8a4cc379aa2946d3.jpg");
   }
   
   #slide3 {
     background-image: linear-gradient(
-        rgba(16, 16, 16, 0.8),
-        rgba(16, 16, 16, 0.8)
+        rgba(16, 16, 16, 0.1),
+        rgba(16, 16, 16, 0.1)
       ),
       url("https://ftp.bmp.ovh/imgs/2020/11/7ef758f6adfa294b.jpg");
   }
   
   #slide4 {
     background-image: linear-gradient(
-        rgba(16, 16, 16, 0.8),
-        rgba(16, 16, 16, 0.8)
+        rgba(16, 16, 16, 0.1),
+        rgba(16, 16, 16, 0.1)
       ),
       url("https://ftp.bmp.ovh/imgs/2020/11/f49d8982c1ae749c.jpg");
   }

@@ -61,7 +61,7 @@ export default {
         _this.$refs.comShowStyle.writeStyleCode(_this.code.substring(0, n));
         // 渲染作用
         _this.$refs.comApplyStyle.responseStyleCode(_this.code.substring(0, n));
-        n += 2;
+        n += 30;
         if (n >= len) {
           // 停止
           clearInterval(setIn);

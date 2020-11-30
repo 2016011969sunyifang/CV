@@ -90,6 +90,8 @@
               <dd>23</dd>
               <dt>所在城市</dt>
               <dd>上海</dd>
+              <dt>毕业院校</dt>
+              <dd>东北师范大学</dd>
               <dt>邮箱</dt>
 
               <dd>sunyf0602@163.com</dd>
@@ -121,7 +123,7 @@
     </main>
     <div class="contectt" id="contect">
       <ul class="icon-list">
-        <li class="icon-list__item">
+        <li class="icon-list__item" @click="contacts1">
           <a target="_blank">
             <div class="box">
               <div class="box__face box__face--front">
@@ -154,8 +156,8 @@
             </div>
           </a>
         </li>
-        <li class="icon-list__item">
-          <a href="https://codepen.io/alphardex" target="_blank">
+        <li class="icon-list__item" @click="contacts2">
+          <a>
             <div class="box">
               <div class="box__face box__face--front">
                 <svg
@@ -215,9 +217,8 @@
             </div>
           </a>
         </li>
-
-        <li class="icon-list__item">
-          <a href="https://github.com/alphardex" target="_blank">
+        <li class="icon-list__item" @click="contacts3">
+          <a href="https://github.com/2016011969sunyifang" target="_blank">
             <div class="box">
               <div class="box__face box__face--front">
                 <svg
@@ -245,11 +246,8 @@
             </div>
           </a>
         </li>
-        <li class="icon-list__item">
-          <a
-            href="https://www.linkedin.com/in/nameless-god-60970313a"
-            target="_blank"
-          >
+        <li class="icon-list__item" @click="contacts4">
+          <a>
             <div class="box">
               <div class="box__face box__face--front">
                 <svg
@@ -277,8 +275,11 @@
             </div>
           </a>
         </li>
-        <li class="icon-list__item">
-          <a href="https://www.instagram.com/mumei_ouja" target="_blank">
+        <li class="icon-list__item" @click="contacts5">
+          <a
+            href="https://blog.csdn.net/s2422617864?spm=1000.2115.3001.5113"
+            target="_blank"
+          >
             <div class="box">
               <div class="box__face box__face--front">
                 <svg
@@ -309,6 +310,29 @@
         </li>
       </ul>
     </div>
+    <div class="contect-methodf">
+      <div class="contect-method">
+        <transition name="myadding1">
+          <div class="neon" v-if="contact1">QQ : 2422617864</div>
+        </transition>
+        <transition name="myadding2">
+          <div class="neon" v-if="contact2">WeChat : sunyifang535</div>
+        </transition>
+        <transition name="myadding">
+          <div class="neon" v-if="contact3">练手小项目</div>
+        </transition>
+        <transition name="myadding">
+          <div class="neon" v-if="contact4">e-mail : sunyf0602@163.com</div>
+        </transition>
+        <transition name="myadding">
+          <div class="neon" v-if="contact5">平时的点滴记录</div>
+        </transition>
+        <transition name="myadding">
+          <div class="neon" v-if="contact6">点击图标来联系我吧</div>
+        </transition>
+      </div>
+    </div>
+
     <section data-x id="siteSkills" class="skills">
       <h2>技能</h2>
       <ol class="clearfix">
@@ -414,9 +438,9 @@
       <h2>个人经历</h2>
       <nav>
         <ol class="clearfix">
-          <li @click="portfolio1">所有</li>
-          <li @click="portfolio2">框架</li>
-          <li @click="portfolio3">原生JS&amp;CSS</li>
+          <li @click="portfolio1">大学</li>
+          <li @click="portfolio2">工作</li>
+          <li @click="portfolio3">生活</li>
         </ol>
         <div
           id="portfolioBar"
@@ -575,6 +599,12 @@ export default {
       addflag: true,
       addflag1: false,
       addflag2: false,
+      contact1: false,
+      contact2: false,
+      contact3: false,
+      contact4: false,
+      contact5: false,
+      contact6: true,
     };
   },
   //方法 函数写这里
@@ -613,6 +643,46 @@ export default {
       setTimeout((name, cd) => {
         this.name = cd + "%";
       }, 1000);
+    },
+    contacts1() {
+      this.contact1 = true;
+      this.contact2 = false;
+      this.contact3 = false;
+      this.contact4 = false;
+      this.contact5 = false;
+      this.contact6 = false;
+    },
+    contacts2() {
+      this.contact1 = false;
+      this.contact2 = true;
+      this.contact3 = false;
+      this.contact4 = false;
+      this.contact5 = false;
+      this.contact6 = false;
+    },
+    contacts3() {
+      this.contact1 = false;
+      this.contact2 = false;
+      this.contact3 = true;
+      this.contact4 = false;
+      this.contact5 = false;
+      this.contact6 = false;
+    },
+    contacts4() {
+      this.contact1 = false;
+      this.contact2 = false;
+      this.contact3 = false;
+      this.contact4 = true;
+      this.contact5 = false;
+      this.contact6 = false;
+    },
+    contacts5() {
+      this.contact1 = false;
+      this.contact2 = false;
+      this.contact3 = false;
+      this.contact4 = false;
+      this.contact5 = true;
+      this.contact6 = false;
     },
   },
   //计算属性
@@ -733,6 +803,7 @@ export default {
 
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
 @import url("https://cdn.jsdelivr.net/gh/alphardex/aqua.css@master/dist/aqua.min.css");
 @import url("https://cdn.jsdelivr.net/gh/alphardex/aqua.css@master/dist/aqua.css");
 // .banner {
@@ -1265,5 +1336,108 @@ export default {
 }
 .showadd {
   display: block !important;
+}
+
+//联系方式字体
+.neon {
+  color: #cce7f8;
+  font-size: 2.5rem;
+  font-family: "Pacifico", cursive;
+  text-transform: uppercase;
+  -webkit-animation: shining 0.1s alternate infinite;
+  animation: shining 0.1s alternate infinite;
+}
+
+@-webkit-keyframes shining {
+  from {
+    text-shadow: 0 0 6px rgba(182, 211, 207, 0.9),
+      0 0 30px rgba(182, 211, 207, 0.3), 0 0 12px rgba(15, 115, 223, 0.5),
+      0 0 21px rgba(15, 115, 223, 0.9), 0 0 34px rgba(15, 115, 223, 0.8),
+      0 0 54px rgba(15, 115, 223, 0.9);
+  }
+
+  to {
+    text-shadow: 0 0 6px #b6d3cf, 0 0 30px rgba(182, 211, 207, 0.4),
+      0 0 12px rgba(15, 115, 223, 0.6), 0 0 22px rgba(15, 115, 223, 0.8),
+      0 0 38px rgba(15, 115, 223, 0.9), 0 0 60px #0f73df;
+  }
+}
+
+@keyframes shining {
+  from {
+    text-shadow: 0 0 6px rgba(182, 211, 207, 0.9),
+      0 0 30px rgba(182, 211, 207, 0.3), 0 0 12px rgba(15, 115, 223, 0.5),
+      0 0 21px rgba(15, 115, 223, 0.9), 0 0 34px rgba(15, 115, 223, 0.8),
+      0 0 54px rgba(15, 115, 223, 0.9);
+  }
+
+  to {
+    text-shadow: 0 0 6px #b6d3cf, 0 0 30px rgba(182, 211, 207, 0.4),
+      0 0 12px rgba(15, 115, 223, 0.6), 0 0 22px rgba(15, 115, 223, 0.8),
+      0 0 38px rgba(15, 115, 223, 0.9), 0 0 60px #0f73df;
+  }
+}
+.contect-methodf {
+  display: flex;
+  justify-content: center;
+}
+.contect-method {
+  width: 800px;
+  height: 80px;
+  // overflow: hidden;
+  position: relative;
+  // display: flex;
+  // justify-content: center;
+}
+.contect-method div {
+  width: 800px;
+  height: 80px;
+  white-space: nowrap;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  // top: 0px;
+  // left: -200px;
+}
+.contect1 {
+  display: none;
+}
+.myadding1-enter {
+  opacity: 0;
+  transform: translateX(500px);
+}
+.myadding1-leave-to {
+  opacity: 0;
+  transform: translateX(-500px);
+}
+.myadding1-enter-active,
+.myadding1-leave-active {
+  transition: all 0.8s ease;
+}
+.myadding2-enter {
+  opacity: 0;
+  transform: translateX(500px);
+}
+.myadding2-leave-to {
+  opacity: 0;
+  transform: translateX(-500px);
+}
+.myadding2-enter-active,
+.myadding2-leave-active {
+  transition: all 0.8s ease;
+}
+.myadding-enter {
+  opacity: 0;
+  transform: translateX(500px);
+}
+.myadding-leave-to {
+  opacity: 0;
+  transform: translateX(-500px);
+}
+.myadding-enter-active,
+.myadding-leave-active {
+  transition: all 0.8s ease;
 }
 </style>
