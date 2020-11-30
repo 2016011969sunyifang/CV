@@ -17,6 +17,7 @@
         ⏫
       </div>
     </el-backtop>
+    <!-- <div class="main" v-title data-title="登录"></div> -->
     <div :class="sticky ? 'sticky' : ''" id="topNavBar" class="topNavBar">
       <div class="topNavBar-inner clearfix">
         <a class="logo" href="#" alt="logo" style="float: left">
@@ -36,19 +37,9 @@
             </li>
             <li>
               <a href="#siteWorks1">作品</a>
-              <ul class="submenu">
-                <li>作品1</li>
-                <li>作品2</li>
-                <li>作品3</li>
-              </ul>
             </li>
             <li>
               <a href="#siteWorks">经历</a>
-              <ul class="submenu">
-                <li>博客1</li>
-                <li>博客2</li>
-                <li>博客3</li>
-              </ul>
             </li>
             <li>
               <a href="#contect" class="btn btn-primary btn-jittery"
@@ -802,7 +793,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Pacifico");
 @import url("https://cdn.jsdelivr.net/gh/alphardex/aqua.css@master/dist/aqua.min.css");
 @import url("https://cdn.jsdelivr.net/gh/alphardex/aqua.css@master/dist/aqua.css");

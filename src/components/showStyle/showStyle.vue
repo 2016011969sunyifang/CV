@@ -1,7 +1,7 @@
 <template>
   <div :class="{ disp: flag }" id="show-style">
-    <svg @click="closeWindow" aria-hidden="true" class="icons">
-      <use xlink:href="#icon-tubiaolunkuo-"></use>
+    <svg @click="closeWindow" aria-hidden="true" class="iconss">
+      <use xlink:href="#icon-2guanbi"></use>
     </svg>
     <div class="style-content" id="style_content">
       <pre class="style-code" v-html="styleMsg"></pre>
@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script type="text/ecmascript-6" scoped>
 export default {
   data() {
     return {
@@ -34,7 +34,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 #show-style {
   position: fixed;
   right: 0px;
@@ -62,7 +62,7 @@ export default {
   margin: 1rem 0;
 }
 
-.icons {
+.iconss {
   position: absolute;
   top: 16px;
   right: 24px;

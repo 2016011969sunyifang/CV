@@ -8,12 +8,15 @@ const routes = [
   {
     path: '/',
     name: 'jianli',
-    component: jianli
+    component: jianli,
+    meta: { title: "sunyifang.cv" }
   },
   {
     path: '/home',
     name: 'home',
-    component: Home
+    component: Home,
+    meta: { title: "sunyifang.cv1" }
+    // meta: { hidden: true, title: "助销员申请" }
   },
 
 

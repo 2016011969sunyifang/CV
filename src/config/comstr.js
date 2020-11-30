@@ -253,12 +253,15 @@ export const str = {
       .userCard dl dd {
         float: left;
         padding: 5px 0;
+        line-height: 26px;
       }
       .userCard dl dt {
         width: 30%;
         font-weight: bold;
       }
       .userCard dl dd {
+        line-height:21px
+        float: right;
         width: 70%;
         color: #9da0a7;
       }
